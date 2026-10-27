@@ -1,0 +1,22 @@
+{
+  "name": "urjitc-pi-setup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal personal Pi setup: compact tools, quiet theme, and optional Rex context.",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/compact-tools.ts",
+      "./extensions/rex-context.ts"
+    ],
+    "themes": [
+      "./themes/default-quiet.json"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  }
+}

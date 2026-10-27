@@ -1,0 +1,14 @@
+{
+  "theme": "default-quiet",
+  "hideThinkingBlock": true,
+  "tuiMode": "fullscreen",
+  "quietStartup": "header",
+  "fullscreenScrollbar": "auto",
+  "fullscreenCopyOnSelect": true,
+  "editorPaddingX": 1,
+  "outputPad": 1,
+  "autocompleteMaxVisible": 8,
+  "terminal": {
+    "showTerminalProgress": true
+  }
+}

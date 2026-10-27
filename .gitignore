@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+auth.json
+mcp-auth.json
+settings.json
+mcp.json
+models.json
+sessions/
+logs/
+*.log

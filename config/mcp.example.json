@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+      "exposure": "codemode",
+      "description": "Search the public web for current information and sources using Exa. Returns search results, not a research agent."
+    }
+  }
+}

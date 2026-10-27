@@ -8,7 +8,7 @@ A small, private configuration package, tested with Pi 1.4.0. The working Git ch
 - **default-quiet.json**: quiet dark theme using muted tool titles and unboxed tool presentation. Retains Pi's default footer.
 - **rex-context.ts**: optional Rex environment context. Inactive outside Rex; missing/unavailable Rex does not block startup. It currently uses Rex's internal `session-start` CLI hook, so this integration is version-sensitive, not a stable public Rex API. It does not rename sessions.
 - **config/**: sanitized examples of reusable preferences, updated alongside intentional preference changes; not automatically synchronized or applied. Exa is search-only and keyless, subject to service limits.
-- **AGENTS.md**: maintenance instructions, also linked into Pi's global agent directory so future sessions know where changes belong.
+- **AGENTS.md**: repository-scoped maintenance instructions; not injected into unrelated Pi conversations.
 
 ## Use this checkout locally
 
@@ -22,13 +22,7 @@ Pi loads local package resources directly from this directory; it does not copy 
 
 Select `default-quiet` in Pi's settings. Review and merge optional preferences from `config/settings.example.json`; do not replace existing settings wholesale. The example records `steeringMode: "all"` and portable `externalEditor: "vim"`; this Mac uses `/usr/bin/vim` explicitly. Run `/reload` in existing sessions after installing or editing resources.
 
-For this personal checkout, link the maintenance instructions into Pi's global context (only if no instructions file already exists; otherwise merge deliberately):
-
-```sh
-ln -s "$HOME/code/pi-setup/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"
-```
-
-The link keeps a single tracked copy. Pi packages do not automatically install global `AGENTS.md` files. Other users should adapt these personal instructions and paths, not blindly install them.
+A short plain `README.md` in `~/.pi/agent/` points to this checkout for agents inspecting the live configuration. It is a location note, not global prompt context. The actual maintenance instructions live only in this repository's `AGENTS.md`. Other users should adapt the checkout path.
 
 Optional Exa setup:
 

@@ -7,7 +7,8 @@ A small, private configuration package, tested with Pi 1.4.0. The working Git ch
 - **compact-tools.ts**: one-line collapsed tool calls, hidden successful text output, short error previews, and native renderer delegation on expansion (Ctrl+O). Codemode and shell calls can show model-written intent comments.
 - **default-quiet.json**: quiet dark theme using muted tool titles and unboxed tool presentation. Retains Pi's default footer.
 - **rex-context.ts**: optional Rex environment context. Inactive outside Rex; missing/unavailable Rex does not block startup. It currently uses Rex's internal `session-start` CLI hook, so this integration is version-sensitive, not a stable public Rex API. It does not rename sessions.
-- **config/**: deliberately minimal examples, not synchronized copies of live settings. Exa is search-only and keyless, subject to service limits.
+- **config/**: sanitized examples of reusable preferences, updated alongside intentional preference changes; not automatically synchronized or applied. Exa is search-only and keyless, subject to service limits.
+- **AGENTS.md**: maintenance instructions, also linked into Pi's global agent directory so future sessions know where changes belong.
 
 ## Use this checkout locally
 
@@ -19,7 +20,15 @@ pi install /absolute/path/to/pi-setup
 
 Pi loads local package resources directly from this directory; it does not copy them into `~/.pi/agent/extensions` or `themes`. Do not also keep the same resources there, or they may load twice.
 
-Select `default-quiet` in Pi's settings. Review and merge optional preferences from `config/settings.example.json`; do not replace existing settings wholesale. Run `/reload` in existing sessions after installing or editing resources.
+Select `default-quiet` in Pi's settings. Review and merge optional preferences from `config/settings.example.json`; do not replace existing settings wholesale. The example records `steeringMode: "all"` and portable `externalEditor: "vim"`; this Mac uses `/usr/bin/vim` explicitly. Run `/reload` in existing sessions after installing or editing resources.
+
+For this personal checkout, link the maintenance instructions into Pi's global context (only if no instructions file already exists; otherwise merge deliberately):
+
+```sh
+ln -s "$HOME/code/pi-setup/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"
+```
+
+The link keeps a single tracked copy. Pi packages do not automatically install global `AGENTS.md` files. Other users should adapt these personal instructions and paths, not blindly install them.
 
 Optional Exa setup:
 
@@ -31,7 +40,7 @@ No local MCP package or additional search agent is needed. Run `/reload` after a
 
 ## Daily workflow
 
-1. Edit the extension/theme files here.
+1. Edit the extension/theme/instruction files here. For live preference changes, update the sanitized example too when the preference belongs in the shared setup.
 2. Run `/reload` and verify behavior in Pi.
 3. Review `git diff`, commit, and push to `origin`.
 

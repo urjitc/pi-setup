@@ -1,5 +1,7 @@
 {
   "theme": "default-quiet",
+  "steeringMode": "all",
+  "externalEditor": "vim",
   "hideThinkingBlock": true,
   "tuiMode": "fullscreen",
   "quietStartup": "header",

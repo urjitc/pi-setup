@@ -1,6 +1,6 @@
 # Personal Pi setup
 
-A small, private configuration package, tested with Pi 1.4.0. The working Git checkout is the source of truth for the extensions and theme; GitHub is its versioned remote.
+A small, public configuration package, tested with Pi 1.4.0. The working Git checkout is the source of truth for the extensions and theme; GitHub is its versioned remote.
 
 ## Included
 
@@ -38,7 +38,7 @@ No local MCP package or additional search agent is needed. Run `/reload` after a
 2. Run `/reload` and verify behavior in Pi.
 3. Review `git diff`, commit, and push to `origin`.
 
-No copy-back or synchronization script. Other authorized users can clone this private repository and install their checkout in the same way.
+No copy-back or synchronization script. Other users can clone this repository and install their checkout in the same way.
 
 ## Intent titles
 
@@ -58,7 +58,7 @@ Expanded details remain available. Pi manages inline images separately, so hidin
 
 Keep live `settings.json`, `mcp.json`, credentials, OAuth tokens, model/provider configuration, sessions, caches, logs, and shared skills in their normal locations under `~/.pi/agent` and `~/.agents/skills`. This package does not own them or overwrite them. Settings examples intentionally omit model defaults, device IDs, machine paths, and internal MCP integrations.
 
-No third-party skills are vendored. Before making this repository public, review provenance/licensing (including the Pi-derived theme), secrets, and machine-specific assumptions. No redistribution license is selected yet.
+No third-party skills are vendored. The Pi-derived theme's upstream MIT notice is preserved in `THIRD_PARTY_NOTICES.md`. No repository-wide redistribution license is selected yet. Review secrets and machine-specific assumptions before committing.
 
 ## References
 
